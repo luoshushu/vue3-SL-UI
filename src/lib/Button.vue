@@ -1,7 +1,7 @@
 <template>
   <button
-    class="big-fool-button"
-    :class="{ [`big-fool-theme-${theme}`]: theme }"
+    class="sl-button"
+    :class="{ [`sl-theme-${theme}`]: theme }"
   >
     <slot />
   </button>
@@ -29,7 +29,7 @@ $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
-.big-fool-button {
+.sl-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;

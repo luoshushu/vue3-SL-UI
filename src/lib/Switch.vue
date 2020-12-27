@@ -1,8 +1,8 @@
 <template>
   <button
-    class="big-fool-switch"
+    class="sl-switch"
     @click="toggle"
-    :class="{ 'big-fool-checked': value }"
+    :class="{ 'sl-checked': value }"
   >
     <span></span>
   </button>
@@ -26,7 +26,7 @@ export default {
 <style lang="scss" scoped>
 $h: 22px;
 $h2: $h - 4px;
-.big-fool-switch {
+.sl-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -43,7 +43,7 @@ $h2: $h - 4px;
     border-radius: $h2 / 2;
     transition: all 250ms;
   }
-  &.big-fool-checked {
+  &.sl-checked {
     background: #1890ff;
     > span {
       left: calc(100% - #{$h2} - 2px);
@@ -57,7 +57,7 @@ $h2: $h - 4px;
       width: $h2 + 4px;
     }
   }
-  &.big-fool-checked:active {
+  &.sl-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;
