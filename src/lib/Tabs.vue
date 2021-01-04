@@ -1,7 +1,18 @@
 <template>
   <div class="sl-tabs">
     <div class="sl-tabs-nav" ref="container">
-      <div class="sl-tabs-nav-item" v-for="(t, index) in titles" :key="index">
+      <div
+        class="sl-tabs-nav-item"
+        v-for="(t, index) in titles"
+        :key="index"
+        :ref="
+          (el) => {
+            if (el) itemRefs[index] = el;
+          }
+        "
+        @click="select(t)"
+        :class="{ selected: t === selected }"
+      >
         {{ t }}
       </div>
       <div class="sl-tabs-nav-indicator" ref="indicator"></div>
@@ -14,13 +25,18 @@
 
 <script lang="ts">
 import Tab from "./Tab.vue";
+import { ref, onMounted, onUpdated } from "vue";
 export default {
   name: "Tabs",
+  props: {
+    selected: {
+      type: String,
+    },
+  },
   setup(props, context) {
-    // console.log({ ...context });
-    // console.log({ ...context.slots });
-    // console.log({ ...context.slots.default });
-    // console.log({ ...context.slots.default() });
+    const itemRefs = ref<HTMLDivElement[]>([]);
+    const indicator = ref<HTMLDivElement>(null);
+    const container = ref<HTMLDivElement>(null);
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
@@ -28,8 +44,23 @@ export default {
       }
     });
     const titles = defaults.map((tag) => tag.props.title);
-
-    return { defaults, titles };
+    const x = () => {
+      const items = itemRefs.value;
+      const result = items.filter((div) =>
+        div.classList.contains("selected")
+      )[0];
+      const { width, left: resultLeft } = result.getBoundingClientRect();
+      const { left: containerLeft } = container.value.getBoundingClientRect();
+      const left = resultLeft - containerLeft;
+      indicator.value.style.width = `${width}px`;
+      indicator.value.style.left = `${left}px`;
+    };
+    onMounted(x);
+    onUpdated(x);
+    const select = (title: string) => {
+      context.emit("update:selected", title);
+    };
+    return { defaults, titles, itemRefs, indicator, select, container };
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Tabs>
+    <Tabs v-model:selected="selected">
       <Tab title="导航1">内容1</Tab>
       <Tab title="导航2">内容2</Tab>
     </Tabs>
@@ -13,7 +13,10 @@ import Tab from "../lib/Tab.vue";
 export default {
   components: { Tabs, Tab },
   setup() {
-    return {};
+    const selected = ref("导航1");
+    return {
+      selected,
+    };
   },
 };
 </script>
