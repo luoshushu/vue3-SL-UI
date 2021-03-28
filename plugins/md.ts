@@ -1,4 +1,5 @@
 // @ts-nocheck
+// vue3 vite plugin https://medium.com/@axwdev/writing-a-vite-plugin-for-vue-3-5bcc1c0915e0
 import path from 'path'
 import fs from 'fs'
 import marked from 'marked'

@@ -6,7 +6,7 @@
         <h1>SL-UI</h1>
         <h2>一个基于学习出设计的 UI 框架</h2>
         <p class="actions">
-          <a href="https://github.com">GitHub</a>
+          <a href="https://github.com/luoshushu/vue3-SL-UI">GitHub</a>
           <router-link to="/doc">开始</router-link>
         </p>
       </div>
@@ -15,21 +15,21 @@
       <ul>
         <li>
           <svg>
-            <use xlink:href="#icon-vue"></use>
+            <use xlink:href="#i-Vue"></use>
           </svg>
           <h3>基于 Vue 3</h3>
           <p>骄傲地使用了 Vue 3 Composition API</p>
         </li>
         <li>
           <svg>
-            <use xlink:href="#icon-ts"></use>
+            <use xlink:href="#i-ts"></use>
           </svg>
           <h3>基于 TypeScript</h3>
           <p>源代码采用 TypeScript 书写</p>
         </li>
         <li>
           <svg>
-            <use xlink:href="#icon-light"></use>
+            <use xlink:href="#i-dushu"></use>
           </svg>
           <h3>代码易读</h3>
           <p>每个组件的源代码都极其简洁</p>
@@ -51,14 +51,10 @@ export default {
 <style lang="scss" scoped>
 $green: #02bcb0;
 $border-radius: 4px;
-$color: #007974;
+$color: #fff;
 
 .topnavAndBanner {
-  background: linear-gradient(
-    145deg,
-    rgba(227, 255, 253, 1) 0%,
-    rgba(183, 233, 230, 1) 100%
-  );
+  background: url('../assets/bg.jpg') center 50% / cover no-repeat;
   clip-path: ellipse(80% 60% at 50% 40%);
 }
 
@@ -121,7 +117,7 @@ $color: #007974;
 
 .banner {
   color: $color;
-  padding: 100px 0;
+  padding: 150px 0;
   display: flex;
   justify-content: center;
   align-items: center;

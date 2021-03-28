@@ -8,8 +8,11 @@ import TabsDemo from "./components/TabsDemo.vue";
 
 import { h } from 'vue';
 import Markdown from './components/Markdown.vue';
+
 const history = createWebHashHistory();
+// 动态引入markdown的md文件，且加上key
 const md = filename => h(Markdown, { path: `../markdown/${filename}.md`, key: filename })
+
 export const router = createRouter({
   history: history,
   routes: [

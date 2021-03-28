@@ -64,6 +64,7 @@ $aside-index: 10;
 
   > .nav {
     flex-shrink: 0;
+    color: #304455;
   }
 
   > .content {
@@ -71,9 +72,9 @@ $aside-index: 10;
     padding-top: 60px;
     padding-left: 156px;
 
-    @media (max-width: 500px) {
-      padding-left: 0;
-    }
+    // @media (max-width: 500px) {
+    //   padding-left: 0;
+    // }
   }
 }
 
