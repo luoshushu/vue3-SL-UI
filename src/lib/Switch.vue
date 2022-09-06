@@ -40,7 +40,7 @@ $h2: $h - 4px;
     height: $h2;
     width: $h2;
     background: white;
-    border-radius: $h2 / 2;
+    border-radius: $h2/2;
     transition: all 250ms;
   }
   &.sl-checked {
