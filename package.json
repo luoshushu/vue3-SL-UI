@@ -1,6 +1,8 @@
 {
-  "name": "vue3-SL-UI",
-  "version": "0.0.0",
+  "name": "vue3-sl-ul",
+  "version": "0.0.1",
+  "files": ["dist/lib/*"],
+  "main": "dist/lib/SL.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
